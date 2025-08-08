@@ -1,0 +1,62 @@
+<Page x:Class="SpookySniper.App.Pages.ConsolePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Background="Transparent">
+    
+    <Grid Margin="30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Header -->
+        <Grid Grid.Row="0" Margin="0,0,0,30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            
+            <StackPanel Grid.Column="0">
+                <TextBlock Text="System Console" FontSize="28" FontWeight="Bold" Foreground="White" Margin="0,0,0,8"/>
+                <TextBlock Text="Monitor system logs and execute commands in real-time" FontSize="14" Foreground="#9CA3AF"/>
+            </StackPanel>
+            
+            <StackPanel Grid.Column="1" Orientation="Horizontal">
+                <Button Content="🗑️ Clear" Style="{StaticResource SecondaryButton}" Margin="0,0,10,0" Padding="12,8"/>
+                <Button Content="💾 Export" Style="{StaticResource ModernButton}" Padding="12,8"/>
+            </StackPanel>
+        </Grid>
+        
+        <!-- Console Output -->
+        <Border Grid.Row="1" Style="{StaticResource Card}" Margin="0,0,0,20">
+            <Grid>
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Background="#0D1117" Padding="20">
+                    <StackPanel>
+                        <TextBlock Text="👻 SpookySniper Console v2.0" FontFamily="Consolas" FontSize="12" Foreground="#8B5CF6" Margin="0,0,0,10"/>
+                        <TextBlock Text="[09:15:32] INFO: Chrome automation initialized successfully" FontFamily="Consolas" FontSize="11" Foreground="#10B981" Margin="0,0,0,3"/>
+                        <TextBlock Text="[09:15:33] INFO: Magic Eden integration loaded" FontFamily="Consolas" FontSize="11" Foreground="#10B981" Margin="0,0,0,3"/>
+                        <TextBlock Text="[09:15:34] SUCCESS: System ready for auto bidding tasks" FontFamily="Consolas" FontSize="11" Foreground="#10B981" Margin="0,0,0,3"/>
+                        <TextBlock Text="[09:15:35] INFO: Discord webhook manager initialized" FontFamily="Consolas" FontSize="11" Foreground="#3B82F6" Margin="0,0,0,3"/>
+                        <TextBlock Text="[09:15:36] INFO: License validation successful - Premium user" FontFamily="Consolas" FontSize="11" Foreground="#10B981" Margin="0,0,0,3"/>
+                        <TextBlock Text="[09:15:37] INFO: Type 'help' for available commands" FontFamily="Consolas" FontSize="11" Foreground="#9CA3AF" Margin="0,0,0,10"/>
+                        <TextBlock Text="Ready for commands..." FontFamily="Consolas" FontSize="11" Foreground="#6B7280" Margin="0,0,0,5"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+        
+        <!-- Command Input -->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock Grid.Column="0" Text="👻>" Foreground="#8B5CF6" FontFamily="Consolas" FontSize="14" FontWeight="Bold" Margin="0,0,10,0" VerticalAlignment="Center"/>
+            <TextBox Grid.Column="1" Style="{StaticResource ModernTextBox}" Height="40" FontFamily="Consolas" Text="Type 'help' for available commands" Margin="0,0,10,0"/>
+            <Button Grid.Column="2" Content="▶️ Execute" Style="{StaticResource ModernButton}" Height="40" Padding="20,0"/>
+        </Grid>
+    </Grid>
+</Page>
