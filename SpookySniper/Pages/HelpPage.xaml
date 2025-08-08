@@ -1,0 +1,120 @@
+<Page x:Class="SpookySniper.App.Pages.HelpPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Background="Transparent">
+    
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="30">
+            <!-- Header -->
+            <Grid Margin="0,0,0,30">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <StackPanel Grid.Column="0">
+                    <TextBlock Text="Help &amp; Support" FontSize="28" FontWeight="Bold" Foreground="White" Margin="0,0,0,8"/>
+                    <TextBlock Text="Get help with SpookySniper features and troubleshooting" FontSize="14" Foreground="#9CA3AF"/>
+                </StackPanel>
+                
+                <Button Grid.Column="1" Content="💬 Contact Support" Style="{StaticResource ModernButton}"/>
+            </Grid>
+            
+            <!-- Quick Start Guide -->
+            <Border Style="{StaticResource Card}" Margin="0,0,0,20">
+                <StackPanel>
+                    <TextBlock Text="🚀 Quick Start Guide" FontSize="20" FontWeight="Bold" Foreground="White" Margin="0,0,0,20"/>
+                    
+                    <StackPanel Margin="0,0,0,15">
+                        <TextBlock Text="1. License Activation" FontSize="16" FontWeight="Bold" Foreground="#8B5CF6" Margin="0,0,0,8"/>
+                        <TextBlock Text="• Enter your license key from Whop purchase" Foreground="#E5E7EB" Margin="20,0,0,5"/>
+                        <TextBlock Text="• License keys start with 'SPOOKY-'" Foreground="#E5E7EB" Margin="20,0,0,5"/>
+                        <TextBlock Text="• Contact support if activation fails" Foreground="#E5E7EB" Margin="20,0,0,5"/>
+                    </StackPanel>
+                    
+                    <StackPanel Margin="0,0,0,15">
+                        <TextBlock Text="2. Chrome Setup" FontSize="16" FontWeight="Bold" Foreground="#8B5CF6" Margin="0,0,0,8"/>
+                        <TextBlock Text="• Chrome will be auto-detected on startup" Foreground="#E5E7EB" Margin="20,0,0,5"/>
+                        <TextBlock Text="• Install Magic Eden browser extension" Foreground="#E5E7EB" Margin="20,0,0,5"/>
+                        <TextBlock Text="• Connect your wallet to Magic Eden" Foreground="#E5E7EB" Margin="20,0,0,5"/>
+                    </StackPanel>
+                    
+                    <StackPanel>
+                        <TextBlock Text="3. Discord Notifications" FontSize="16" FontWeight="Bold" Foreground="#8B5CF6" Margin="0,0,0,8"/>
+                        <TextBlock Text="• Create a Discord webhook in your server" Foreground="#E5E7EB" Margin="20,0,0,5"/>
+                        <TextBlock Text="• Add webhook URL in Settings" Foreground="#E5E7EB" Margin="20,0,0,5"/>
+                        <TextBlock Text="• Test the connection before starting tasks" Foreground="#E5E7EB" Margin="20,0,0,5"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+            
+            <!-- FAQ -->
+            <Border Style="{StaticResource Card}" Margin="0,0,0,20">
+                <StackPanel>
+                    <TextBlock Text="❓ Frequently Asked Questions" FontSize="20" FontWeight="Bold" Foreground="White" Margin="0,0,0,20"/>
+                    
+                    <Border Background="#21262D" CornerRadius="8" Padding="15" Margin="0,0,0,10">
+                        <StackPanel>
+                            <TextBlock Text="Q: Is SpookySniper safe to use?" FontWeight="Bold" Foreground="#8B5CF6" Margin="0,0,0,5"/>
+                            <TextBlock Text="A: Yes! SpookySniper never accesses your private keys. It works through your existing browser session where you've already connected your wallet." 
+                                      Foreground="#E5E7EB" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </Border>
+                    
+                    <Border Background="#21262D" CornerRadius="8" Padding="15" Margin="0,0,0,10">
+                        <StackPanel>
+                            <TextBlock Text="Q: How do I get a license key?" FontWeight="Bold" Foreground="#8B5CF6" Margin="0,0,0,5"/>
+                            <TextBlock Text="A: Purchase a license from our Whop store. You'll receive a license key that starts with 'SPOOKY-' via email." 
+                                      Foreground="#E5E7EB" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </Border>
+                    
+                    <Border Background="#21262D" CornerRadius="8" Padding="15" Margin="0,0,0,10">
+                        <StackPanel>
+                            <TextBlock Text="Q: Can I run multiple tasks simultaneously?" FontWeight="Bold" Foreground="#8B5CF6" Margin="0,0,0,5"/>
+                            <TextBlock Text="A: Yes! You can run up to 5 concurrent tasks (configurable in Settings). Each task operates independently." 
+                                      Foreground="#E5E7EB" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Border>
+            
+            <!-- System Information -->
+            <Border Style="{StaticResource Card}">
+                <StackPanel>
+                    <TextBlock Text="ℹ️ System Information" FontSize="20" FontWeight="Bold" Foreground="White" Margin="0,0,0,20"/>
+                    
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <StackPanel Grid.Column="0" Margin="0,0,20,0">
+                            <TextBlock Text="Application Version: 2.0.0" Foreground="#E5E7EB" Margin="0,0,0,8"/>
+                            <TextBlock Text="Framework: .NET 6.0" Foreground="#E5E7EB" Margin="0,0,0,8"/>
+                            <TextBlock Text="Platform: Windows" Foreground="#E5E7EB" Margin="0,0,0,8"/>
+                            <TextBlock Text="License: Premium" Foreground="#10B981" Margin="0,0,0,8"/>
+                        </StackPanel>
+                        
+                        <StackPanel Grid.Column="1" Margin="20,0,0,0">
+                            <TextBlock Text="Chrome: ✅ Connected" Foreground="#10B981" Margin="0,0,0,8"/>
+                            <TextBlock Text="Magic Eden: ✅ Ready" Foreground="#10B981" Margin="0,0,0,8"/>
+                            <TextBlock Text="Discord: ⚠️ Not Configured" Foreground="#F59E0B" Margin="0,0,0,8"/>
+                            <TextBlock Text="Memory Usage: 145 MB" Foreground="#3B82F6" Margin="0,0,0,8"/>
+                        </StackPanel>
+                    </Grid>
+                    
+                    <Grid Margin="0,20,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Button Grid.Column="1" Content="📋 Copy System Info" Style="{StaticResource SecondaryButton}"/>
+                    </Grid>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
