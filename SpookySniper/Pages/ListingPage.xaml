@@ -1,0 +1,74 @@
+<Page x:Class="SpookySniper.App.Pages.ListingPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Background="Transparent">
+    
+    <Grid Margin="30">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="800">
+            <!-- Coming Soon Header -->
+            <TextBlock Text="🚀" FontSize="80" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            <TextBlock Text="Auto Listing Feature" FontSize="32" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+            <TextBlock Text="Coming Soon!" FontSize="24" Foreground="#8B5CF6" HorizontalAlignment="Center" Margin="0,0,0,30"/>
+            
+            <TextBlock Text="Automatically list your successfully purchased NFTs back on Magic Eden with intelligent pricing strategies." 
+                      FontSize="16" Foreground="#9CA3AF" HorizontalAlignment="Center" 
+                      TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,0,40"/>
+            
+            <!-- Features Preview -->
+            <Border Style="{StaticResource Card}">
+                <StackPanel>
+                    <TextBlock Text="📋 Planned Features" FontSize="20" FontWeight="Bold" Foreground="White" Margin="0,0,0,20"/>
+                    
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <StackPanel Grid.Column="0" Margin="0,0,20,0">
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                                <TextBlock Text="✅" FontSize="16" Margin="0,0,10,0"/>
+                                <TextBlock Text="Automatic listing after successful purchase" Foreground="#E5E7EB" FontSize="14" TextWrapping="Wrap"/>
+                            </StackPanel>
+                            
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                                <TextBlock Text="✅" FontSize="16" Margin="0,0,10,0"/>
+                                <TextBlock Text="Dynamic pricing based on floor price" Foreground="#E5E7EB" FontSize="14" TextWrapping="Wrap"/>
+                            </StackPanel>
+                            
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                                <TextBlock Text="✅" FontSize="16" Margin="0,0,10,0"/>
+                                <TextBlock Text="Configurable profit margins" Foreground="#E5E7EB" FontSize="14" TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </StackPanel>
+                        
+                        <StackPanel Grid.Column="1" Margin="20,0,0,0">
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                                <TextBlock Text="✅" FontSize="16" Margin="0,0,10,0"/>
+                                <TextBlock Text="Bulk listing operations" Foreground="#E5E7EB" FontSize="14" TextWrapping="Wrap"/>
+                            </StackPanel>
+                            
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                                <TextBlock Text="✅" FontSize="16" Margin="0,0,10,0"/>
+                                <TextBlock Text="Discord notifications for listings" Foreground="#E5E7EB" FontSize="14" TextWrapping="Wrap"/>
+                            </StackPanel>
+                            
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                                <TextBlock Text="✅" FontSize="16" Margin="0,0,10,0"/>
+                                <TextBlock Text="Advanced scheduling options" Foreground="#E5E7EB" FontSize="14" TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                    
+                    <Rectangle Height="1" Fill="#30363D" Margin="0,20"/>
+                    
+                    <StackPanel HorizontalAlignment="Center">
+                        <TextBlock Text="👻 Premium Feature" FontSize="14" Foreground="#8B5CF6" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                        <TextBlock Text="Available exclusively for licensed SpookySniper users" FontSize="12" Foreground="#6B7280" HorizontalAlignment="Center" Margin="0,0,0,15"/>
+                        <Button Content="📧 Get Notified When Available" Style="{StaticResource ModernButton}"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Page>
