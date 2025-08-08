@@ -1,0 +1,111 @@
+<Window x:Class="SpookySniper.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="👻 SpookySniper v2.0 - Premium Magic Eden Auto Bidder" 
+        Height="900" Width="1500" 
+        MinHeight="700" MinWidth="1200"
+        WindowStartupLocation="CenterScreen"
+        Background="#0D1117"
+        WindowStyle="None"
+        AllowsTransparency="True">
+    
+    <Border CornerRadius="12" Background="#0D1117" BorderBrush="#30363D" BorderThickness="1">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <!-- Custom Title Bar -->
+            <Grid Grid.Row="0" Background="#161B22" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="20,0,0,0" VerticalAlignment="Center">
+                    <TextBlock Text="👻" FontSize="22" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                    <TextBlock Text="SpookySniper" VerticalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="18"/>
+                    <TextBlock Text="v2.0 Premium" VerticalAlignment="Center" Foreground="#8B5CF6" FontSize="12" Margin="10,0,0,0"/>
+                </StackPanel>
+                
+                <StackPanel Grid.Column="2" Orientation="Horizontal" Margin="0,0,15,0">
+                    <Button Content="🗕" Width="35" Height="30" Background="Transparent" Foreground="White" BorderThickness="0" Click="MinimizeButton_Click" Style="{StaticResource TitleBarButton}"/>
+                    <Button Content="🗙" Width="35" Height="30" Background="Transparent" Foreground="White" BorderThickness="0" Click="CloseButton_Click" Style="{StaticResource TitleBarButton}"/>
+                </StackPanel>
+            </Grid>
+            
+            <!-- Main Content -->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="280"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <!-- Sidebar -->
+                <Border Grid.Column="0" Background="#161B22" CornerRadius="0,0,0,12">
+                    <StackPanel Margin="20">
+                        <!-- Logo Section -->
+                        <Border CornerRadius="12" Padding="20" Margin="0,0,0,30">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                    <GradientStop Color="#8B5CF6" Offset="0"/>
+                                    <GradientStop Color="#7C3AED" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <StackPanel HorizontalAlignment="Center">
+                                <TextBlock Text="👻" FontSize="32" HorizontalAlignment="Center" Margin="0,0,0,8"/>
+                                <TextBlock Text="SpookySniper" FontSize="16" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center"/>
+                                <TextBlock Text="Premium Edition" FontSize="11" Foreground="#E5E7EB" HorizontalAlignment="Center" Opacity="0.8"/>
+                            </StackPanel>
+                        </Border>
+                        
+                        <TextBlock Text="MAIN MENU" Foreground="#6B7280" FontSize="11" FontWeight="Bold" Margin="0,0,0,15"/>
+                        
+                        <Button x:Name="DashboardButton" Content="📊 Dashboard" Style="{StaticResource SidebarButton}" Click="NavigateToPage" Tag="Dashboard"/>
+                        <Button x:Name="TasksButton" Content="⚡ Auto Bid Tasks" Style="{StaticResource SidebarButton}" Click="NavigateToPage" Tag="Tasks"/>
+                        <Button x:Name="WebhooksButton" Content="🔗 Discord Webhook" Style="{StaticResource SidebarButton}" Click="NavigateToPage" Tag="Webhooks"/>
+                        <Button x:Name="ListingButton" Content="📈 Auto Listing" Style="{StaticResource SidebarButton}" Click="NavigateToPage" Tag="Listing"/>
+                        
+                        <Rectangle Height="1" Fill="#30363D" Margin="0,20"/>
+                        
+                        <TextBlock Text="TOOLS" Foreground="#6B7280" FontSize="11" FontWeight="Bold" Margin="0,10,0,15"/>
+                        
+                        <Button x:Name="ConsoleButton" Content="💻 Console" Style="{StaticResource SidebarButton}" Click="NavigateToPage" Tag="Console"/>
+                        <Button x:Name="SettingsButton" Content="⚙️ Settings" Style="{StaticResource SidebarButton}" Click="NavigateToPage" Tag="Settings"/>
+                        <Button x:Name="HelpButton" Content="❓ Help" Style="{StaticResource SidebarButton}" Click="NavigateToPage" Tag="Help"/>
+                        
+                        <!-- Status Panel -->
+                        <Border Background="#21262D" CornerRadius="10" Margin="0,30,0,0" Padding="15">
+                            <StackPanel>
+                                <TextBlock Text="SYSTEM STATUS" Foreground="#6B7280" FontSize="10" FontWeight="Bold" Margin="0,0,0,12"/>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
+                                    <Ellipse Width="6" Height="6" Fill="#10B981" Margin="0,0,8,0"/>
+                                    <TextBlock Text="Chrome Connected" Foreground="#E5E7EB" FontSize="11"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
+                                    <Ellipse Width="6" Height="6" Fill="#10B981" Margin="0,0,8,0"/>
+                                    <TextBlock Text="Magic Eden Ready" Foreground="#E5E7EB" FontSize="11"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
+                                    <Ellipse Width="6" Height="6" Fill="#8B5CF6" Margin="0,0,8,0"/>
+                                    <TextBlock x:Name="ActiveTasksText" Text="0 Active Tasks" Foreground="#E5E7EB" FontSize="11"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Ellipse Width="6" Height="6" Fill="#F59E0B" Margin="0,0,8,0"/>
+                                    <TextBlock Text="Licensed User" Foreground="#E5E7EB" FontSize="11"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </Border>
+                
+                <!-- Content Area -->
+                <Border Grid.Column="1" Background="#0D1117" CornerRadius="0,0,12,0" Padding="30">
+                    <Frame x:Name="ContentFrame" NavigationUIVisibility="Hidden"/>
+                </Border>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
