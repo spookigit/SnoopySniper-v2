@@ -1,0 +1,64 @@
+<Window x:Class="SnoopySniper.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SnoopySniper v2.0 - Magic Eden Auto Bidder" 
+        Height="800" Width="1400" 
+        MinHeight="600" MinWidth="1000"
+        WindowStartupLocation="CenterScreen"
+        Background="#1A1A1A">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Sidebar -->
+        <Border Grid.Column="0" Background="#2A2A2A" BorderBrush="#444444" BorderThickness="0,0,1,0">
+            <StackPanel>
+                <!-- Logo -->
+                <Border Background="#8A2BE2" Height="80" Margin="0,0,0,20">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock Text="🎯" FontSize="24" Margin="0,0,10,0"/>
+                        <TextBlock Text="SnoopySniper" FontSize="18" FontWeight="Bold" Foreground="White"/>
+                    </StackPanel>
+                </Border>
+                
+                <!-- Navigation Menu -->
+                <StackPanel>
+                    <Button x:Name="DashboardButton" Content="📊 Dashboard" Style="{StaticResource SidebarButton}" Click="NavigateToPage" Tag="Dashboard"/>
+                    <Button x:Name="TasksButton" Content="⚡ Auto Bid Tasks" Style="{StaticResource SidebarButton}" Click="NavigateToPage" Tag="Tasks"/>
+                    <Button x:Name="WebhooksButton" Content="🔗 Webhooks" Style="{StaticResource SidebarButton}" Click="NavigateToPage" Tag="Webhooks"/>
+                    <Button x:Name="ListingButton" Content="📈 Auto Listing" Style="{StaticResource SidebarButton}" Click="NavigateToPage" Tag="Listing"/>
+                    <Button x:Name="ConsoleButton" Content="💻 Console" Style="{StaticResource SidebarButton}" Click="NavigateToPage" Tag="Console"/>
+                    <Button x:Name="SettingsButton" Content="⚙️ Settings" Style="{StaticResource SidebarButton}" Click="NavigateToPage" Tag="Settings"/>
+                    <Button x:Name="HelpButton" Content="❓ Help" Style="{StaticResource SidebarButton}" Click="NavigateToPage" Tag="Help"/>
+                </StackPanel>
+                
+                <!-- Status Indicator -->
+                <Border Background="#333333" CornerRadius="10" Margin="15,20,15,0" Padding="15">
+                    <StackPanel>
+                        <TextBlock Text="System Status" FontSize="14" FontWeight="Bold" Foreground="White" Margin="0,0,0,10"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                            <Ellipse Width="8" Height="8" Fill="#4CAF50" Margin="0,0,8,0"/>
+                            <TextBlock Text="Chrome: Connected" FontSize="12" Foreground="#CCCCCC"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                            <Ellipse Width="8" Height="8" Fill="#4CAF50" Margin="0,0,8,0"/>
+                            <TextBlock Text="Magic Eden: Ready" FontSize="12" Foreground="#CCCCCC"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Ellipse Width="8" Height="8" Fill="#FF9800" Margin="0,0,8,0"/>
+                            <TextBlock Text="Active Tasks: 2" FontSize="12" Foreground="#CCCCCC"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Border>
+        
+        <!-- Main Content Area -->
+        <Grid Grid.Column="1">
+            <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Background="Transparent"/>
+        </Grid>
+    </Grid>
+</Window>
